@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="icon" type="image/png" 
+          href="https://cdn.glitch.global/011875c1-2e8a-4ff4-806a-793934a0acda/android-chrome-512x512.png?v=1734461641548" />
+    <title>Web Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .logo {
+            margin-top: 30px;
+            width: 128px;
+            height: 128px;
+        }
+  </style>
+</head>
+<body>
+  <img src="https://cdn.glitch.global/011875c1-2e8a-4ff4-806a-793934a0acda/android-chrome-512x512.png?v=1734461641548" 
+         alt="Logo" class="logo">
+    <h1>Customizable Web Scraper</h1>
+<form action="/scrape" method="POST">
+    <label for="url">Enter URL:</label><br>
+    <input type="text" id="url" name="url" placeholder="https://example.com" required><br><br>
+
+    <label for="tag">Enter Tag to Scrape (e.g., p, h1, img):</label><br>
+    <input type="text" id="tag" name="tag" placeholder="p" required><br><br>
+
+    <button type="submit">Scrape</button>
+</form>
+
+</body>
+</html>

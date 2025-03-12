@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link rel="icon" type="image/png" 
+          href="https://cdn.glitch.global/011875c1-2e8a-4ff4-806a-793934a0acda/android-chrome-512x512.png?v=1734461641548" />
+    <title>Scraped Results</title>
+</head>
+<body>
+    <h1>Scraped Results</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <h2>Title: {{ title }}</h2>
+        <h3>Content from: <a href="{{ url }}" target="_blank">{{ url }}</a></h3>
+        <h3>Scraped Elements for Tag: &lt;{{ tag }}&gt;</h3>
+        <ul>
+            {% for element in elements %}
+                <li>{{ element }}</li>
+            {% else %}
+                <li>No content found for tag &lt;{{ tag }}&gt;.</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>
