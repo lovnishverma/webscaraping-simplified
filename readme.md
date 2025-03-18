@@ -2,6 +2,8 @@
 
 Live Demo: https://webscaraping-simplified.glitch.me/
 
+GitHub Repo Link: https://github.com/lovnishverma/webscaraping-simplified
+
 ## Overview
 This is a simple **Flask-based web scraping application** that allows users to enter a URL and an HTML tag to extract and display content from that webpage.
 
@@ -10,8 +12,11 @@ This is a simple **Flask-based web scraping application** that allows users to e
 
 ## Features
 ✅ **User-friendly Web Interface:** Enter URL and tag to scrape data.
+
 ✅ **Web Scraping with BeautifulSoup:** Extracts text from specified HTML tags.
+
 ✅ **Error Handling:** Displays an error if URL or tag is missing.
+
 ✅ **Minimal and Lightweight:** Uses Flask for the backend.
 
 ## Requirements
