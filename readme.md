@@ -5,6 +5,9 @@ Live Demo: https://webscaraping-simplified.glitch.me/
 ## Overview
 This is a simple **Flask-based web scraping application** that allows users to enter a URL and an HTML tag to extract and display content from that webpage.
 
+![image](https://github.com/user-attachments/assets/13838a50-71e5-411d-ac7c-034e5caac405)
+
+
 ## Features
 ✅ **User-friendly Web Interface:** Enter URL and tag to scrape data.
 ✅ **Web Scraping with BeautifulSoup:** Extracts text from specified HTML tags.
@@ -94,6 +97,9 @@ if __name__ == "__main__":
     app.run(debug=True)  # Debug mode is enabled to show errors in the console
 
 ```
+
+![image](https://github.com/user-attachments/assets/1a81b045-6962-4d62-92b9-ea3260705df2)
+
 
 ## Notes
 ⚠️ **Important Considerations:**
