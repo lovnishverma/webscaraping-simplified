@@ -1,5 +1,7 @@
 # Flask Web Scraper
 
+Live Demo: https://webscaraping-simplified.glitch.me/
+
 ## Overview
 This is a simple **Flask-based web scraping application** that allows users to enter a URL and an HTML tag to extract and display content from that webpage.
 
@@ -56,40 +58,41 @@ http://yourprojectname.glitch.me/
 
 ## Code
 ```python
-from flask import Flask, render_template, request  # Flask ka use web app banane ke liye ho raha hai
-import requests  # HTTP requests bhejne ke liye
-from bs4 import BeautifulSoup  # Web scraping ke liye BeautifulSoup library
+from flask import Flask, render_template, request  # Flask is used to create a web app
+import requests  # To send HTTP requests
+from bs4 import BeautifulSoup  # BeautifulSoup is used for web scraping
 
-app = Flask(__name__)  # Flask ka object bana rahe hain
+app = Flask(__name__)  # Creating a Flask app instance
 
-# Home route - Form dikhane ke liye
+# Home route - Displays the form
 @app.route("/")
 def index():
-    return render_template("index.html")  # index.html template render kar raha hai
+    return render_template("index.html")  # Renders the index.html template
 
-# Scraping route - User ke input ke basis pe scraping karega
+# Scraping route - Scrapes data based on user input
 @app.route("/scrape", methods=["POST"])
 def scrape():
-    url, tag = request.form.get("url"), request.form.get("tag")  # Form se URL aur tag le rahe hain
-    if not url or not tag:  # Agar koi value missing hai toh error return karenge
+    url, tag = request.form.get("url"), request.form.get("tag")  # Get URL and tag from the form
+    if not url or not tag:  # If any value is missing, return an error
         return render_template("result.html", error="Both URL and Tag are required.")
 
-    # HTTP request bhej rahe hain webpage ke content ko fetch karne ke liye
+    # Send an HTTP request to fetch the webpage content
     response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-    response.raise_for_status()  # Agar request fail hoti hai toh error raise hoga
+    response.raise_for_status()  # Raise an error if the request fails
 
-    # Page ka HTML content parse kar rahe hain
+    # Parse the HTML content of the page
     soup = BeautifulSoup(response.text, "html.parser")
 
-    # Diye gaye tag ke andar jo bhi text milega, use extract kar rahe hain
+    # Extract text from all occurrences of the given tag
     elements = [e.get_text() for e in soup.find_all(tag)]
 
-    # Result page ko render kar rahe hain extracted data ke saath
+    # Render the result page with extracted data
     return render_template("result.html", tag=tag, url=url, title=soup.title.string or "No Title", elements=elements)
 
-# Flask server ko run karne ke liye
+# Run the Flask server
 if __name__ == "__main__":
-    app.run(debug=True)  # Debug mode enable hai, taaki errors console me show ho sakein
+    app.run(debug=True)  # Debug mode is enabled to show errors in the console
+
 ```
 
 ## Notes
