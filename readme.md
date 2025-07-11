@@ -1,6 +1,6 @@
 # Flask Web Scraper
 
-Live Demo: https://webscaraping-simplified.glitch.me/
+Live Demo: https://webscaraping-simplified.onrender.com
 
 GitHub Repo Link: https://github.com/lovnishverma/webscaraping-simplified
 
