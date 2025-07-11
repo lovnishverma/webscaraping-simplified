@@ -1,7 +1,7 @@
 flask
 requests
 bs4
-
+gunicorn
 
 
 
